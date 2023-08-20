@@ -16,19 +16,34 @@ class _ColumnScreenState extends State<ColumnScreen> {
       ),
       body: Column(
         children: [
-          Text('Text 1'),
-          Text('Text 2'),
-          Container(
-            color: Colors.blue,
-            height: 100,
-            width: 100,
+          Text("Microsoft Logo",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              )),
+          Row(
+            children: [
+              Container(
+                color: Colors.red,
+                height: 100,
+                width: 100,
+              ),
+              Container(
+                color: Colors.green,
+                height: 100,
+                width: 100,
+              ),
+            ],
           ),
           Row(
             children: [
-              Text('Row Text 1'),
-              Text('Row Text 2'),
               Container(
-                color: Colors.red,
+                color: Colors.blue,
+                height: 100,
+                width: 100,
+              ),
+              Container(
+                color: Colors.orange,
                 height: 100,
                 width: 100,
               ),
