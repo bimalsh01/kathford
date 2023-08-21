@@ -8,9 +8,9 @@ class InputScreen extends StatefulWidget {
 }
 
 class _InputScreenState extends State<InputScreen> {
-  int? firstNumber;
-  int? secondNumber;
-  int result = 0;
+  double? firstNumber;
+  double? secondNumber;
+  double result = 0.00;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _InputScreenState extends State<InputScreen> {
               ),
               onChanged: (value) {
                 setState(() {
-                  firstNumber = int.parse(value);
+                  firstNumber = double.parse(value);
                 });
               },
             ),
@@ -40,7 +40,7 @@ class _InputScreenState extends State<InputScreen> {
               ),
               onChanged: (value) {
                 setState(() {
-                  secondNumber = int.parse(value);
+                  secondNumber = double.parse(value);
                 });
               },
             ),
@@ -55,13 +55,31 @@ class _InputScreenState extends State<InputScreen> {
             TextButton(
                 onPressed: () {
                   setState(() {
-                    result = firstNumber! + secondNumber! as int;
+                    result = firstNumber! + secondNumber!;
                   });
                 },
                 child: Text("Add")),
-            ElevatedButton(onPressed: () {}, child: Text("Subtract")),
-            OutlinedButton(onPressed: () {}, child: Text("Divide")),
-            ElevatedButton(onPressed: () {}, child: Text("Multiply")),
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    result = firstNumber! - secondNumber!;
+                  });
+                },
+                child: Text("Subtract")),
+            OutlinedButton(
+                onPressed: () {
+                  setState(() {
+                    result = firstNumber! / secondNumber!;
+                  });
+                },
+                child: Text("Divide")),
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    result = firstNumber! * secondNumber!;
+                  });
+                },
+                child: Text("Multiply")),
           ],
         ),
       ),
